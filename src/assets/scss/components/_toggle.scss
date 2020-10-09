@@ -1,0 +1,65 @@
+.#{$tag}-toggle{
+    
+    &.style-1{
+        display: none;
+        
+        & + label{
+            position: relative;
+            display: block;
+            width:45px;
+            height: 24px;
+            border-radius: 40px;
+            background-color:color(gray-300);
+            cursor: pointer;
+
+            &.#{$tag}-dark{
+                background-color:color(dark-300);
+            }
+
+            &::before{
+                content:"";
+                position: absolute;
+                top:50%;
+                left:3px;
+                width:18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color:color(white);
+                transform: translateY(-50%);
+                transition:background-color .4s, left .4s ease;
+            }
+        }
+
+        &:checked + label{
+            background-color:color(blue-100);
+
+            &.#{$tag}-dark{
+                background-color:rgba(color(dark-200),.5);
+            }
+
+            &::before{
+                left:calc(100% - 21px);
+            }
+        }
+    }
+
+}
+
+.#{$tag}-toggle-group{
+    display: flex;
+    align-items: center;
+    width:100%;
+    margin:1em 0;
+
+    p{
+        color:color(blue-100);
+        font-size:14px;
+        font-weight: weight(medium);
+    }
+
+    .#{$tag}-toggle{
+        &+label{
+            margin:auto 0 auto auto!important;
+        }
+    }
+}

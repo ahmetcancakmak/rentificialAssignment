@@ -1,0 +1,179 @@
+$rtf-family: "Rentificial" !default;
+$rtf-path: "fonts" !default;
+
+$rtf-arrow-down: "\e900";
+$rtf-arrow-up: "\e901";
+$rtf-calendar: "\e902";
+$rtf-case: "\e903";
+$rtf-check: "\e904";
+$rtf-check-circle: "\e905";
+$rtf-cog: "\e906";
+$rtf-dashboard: "\e907";
+$rtf-edit: "\e908";
+$rtf-excel: "\e909";
+$rtf-eye: "\e90a";
+$rtf-file-dollar: "\e90b";
+$rtf-file-text: "\e90c";
+$rtf-hamburger: "\e90d";
+$rtf-house-dollar: "\e90e";
+$rtf-life-ring: "\e90f";
+$rtf-line-up: "\e910";
+$rtf-logout: "\e911";
+$rtf-magnifier: "\e912";
+$rtf-plus: "\e913";
+$rtf-star: "\e914";
+$rtf-times: "\e915";
+$rtf-trash: "\e916";
+$rtf-user-plus: "\e917";
+$rtf-users: "\e918";
+
+
+@font-face {
+  font-family: '#{$rtf-family}';
+  src:
+    url('../#{$rtf-path}/#{$rtf-family}/#{$rtf-family}.ttf?99gbpf') format('truetype'),
+    url('../#{$rtf-path}/#{$rtf-family}/#{$rtf-family}.woff?99gbpf') format('woff'),
+    url('../#{$rtf-path}/#{$rtf-family}/#{$rtf-family}.svg?99gbpf##{$rtf-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  font-family: '#{$rtf-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rtf-arrow-down {
+  &:before {
+    content: $rtf-arrow-down; 
+  }
+}
+.rtf-arrow-up {
+  &:before {
+    content: $rtf-arrow-up; 
+  }
+}
+.rtf-calendar {
+  &:before {
+    content: $rtf-calendar; 
+  }
+}
+.rtf-case {
+  &:before {
+    content: $rtf-case; 
+  }
+}
+.rtf-check {
+  &:before {
+    content: $rtf-check; 
+  }
+}
+.rtf-check-circle {
+  &:before {
+    content: $rtf-check-circle; 
+  }
+}
+.rtf-cog {
+  &:before {
+    content: $rtf-cog; 
+  }
+}
+.rtf-dashboard {
+  &:before {
+    content: $rtf-dashboard; 
+  }
+}
+.rtf-edit {
+  &:before {
+    content: $rtf-edit; 
+  }
+}
+.rtf-excel {
+  &:before {
+    content: $rtf-excel; 
+  }
+}
+.rtf-eye {
+  &:before {
+    content: $rtf-eye; 
+  }
+}
+.rtf-file-dollar {
+  &:before {
+    content: $rtf-file-dollar; 
+  }
+}
+.rtf-file-text {
+  &:before {
+    content: $rtf-file-text; 
+  }
+}
+.rtf-hamburger {
+  &:before {
+    content: $rtf-hamburger; 
+  }
+}
+.rtf-house-dollar {
+  &:before {
+    content: $rtf-house-dollar; 
+  }
+}
+.rtf-life-ring {
+  &:before {
+    content: $rtf-life-ring; 
+  }
+}
+.rtf-line-up {
+  &:before {
+    content: $rtf-line-up; 
+  }
+}
+.rtf-logout {
+  &:before {
+    content: $rtf-logout; 
+  }
+}
+.rtf-magnifier {
+  &:before {
+    content: $rtf-magnifier; 
+  }
+}
+.rtf-plus {
+  &:before {
+    content: $rtf-plus; 
+  }
+}
+.rtf-star {
+  &:before {
+    content: $rtf-star; 
+  }
+}
+.rtf-times {
+  &:before {
+    content: $rtf-times; 
+  }
+}
+.rtf-trash {
+  &:before {
+    content: $rtf-trash; 
+  }
+}
+.rtf-user-plus {
+  &:before {
+    content: $rtf-user-plus; 
+  }
+}
+.rtf-users {
+  &:before {
+    content: $rtf-users; 
+  }
+}
+

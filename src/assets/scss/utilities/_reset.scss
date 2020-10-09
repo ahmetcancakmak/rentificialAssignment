@@ -1,0 +1,66 @@
+html{
+    box-sizing: border-box;
+    font-family: $primaryFont;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+*, *:hover, *:focus, *:active{
+    outline:none!important;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+body{
+    font-family: $primaryFont;
+    overflow-x: hidden;
+}
+  
+ol, ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active{
+    text-decoration: none!important;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input,
+input:hover,
+input:focus,
+input:active,
+button,
+button:hover,
+button:focus,
+button:active,
+textarea,
+textarea:hover,
+textarea:focus,
+textarea:active,
+select,
+select:hover,
+select:focus,
+select:active{
+    outline:none!important;
+}

@@ -1,0 +1,25 @@
+// ## TYPOGRAHPY ##
+$primaryFont:'SFProDisplay';
+$iconFont:'Rentificial';
+$serif:sans-serif!default;
+
+$weight-map:(
+    ultralight:100,
+    thin:200,
+    light:300,
+    regular:400,
+    medium:500,
+    semibold:600,
+    bold:700,
+    heavy:800,
+    black:900
+);
+
+// ## BREAK POINTS ##
+$breakpoints:(
+    small: 576px,
+    middle: 768px,
+    large: 992px,
+    x-large: 1200px,
+    xx-large: 1600px
+);

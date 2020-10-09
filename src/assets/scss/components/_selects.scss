@@ -1,0 +1,180 @@
+.bootstrap-select.#{$tag}{
+
+    &.p75{
+        button{
+            font-size:12px!important;
+            padding:1em!important;
+
+            &::after{
+                font-size:6px!important;
+                padding:0!important;
+            }
+        }
+    }
+
+    &.block{
+        width:100%!important;
+        button{
+            width:100%!important;
+        }
+    }
+
+    button.btn.dropdown-toggle{
+        display: inline-flex;
+        align-items: center;
+        width:100%;
+        padding:0 0 0 15px;
+        color:rgba(color(blue-100),.5);
+        font-family: $primaryFont, $serif;
+        font-size:12px;
+        font-weight: weight(bold);
+        background-color: transparent;
+        border:1px solid color(gray-100);
+        border-radius: 5px;
+        transition:background-color .4s,color .4s,border-color .4s ease-in;
+        
+        &::after{
+            content:$rtf-arrow-down;
+            display: block;
+            width: auto;
+            height: 100%;
+            font-family:$iconFont;
+            font-size: 5px;
+            float: right;
+            border: none;
+            padding: 12px;
+            margin-left: 15px;
+            color:color(blue-100);
+            transition:color .4s ease-in;
+        }
+
+        &.error{
+            border-color:color(red);
+
+            &:hover,
+            &:focus{
+                border-color:color(red);
+            }
+        }
+    
+        &:hover,
+        &:focus{
+            background-color:darken(color(white),3);
+            border-color:color(blue-200);
+        }
+
+        &:hover,
+        &:active,
+        &:focus{
+            outline: none!important;
+        }
+    
+        &.#{$tag}-dark{
+            background-color:rgba(color(white),.1);
+            color:color(white);
+            border-color:rgba(color(white),.1);
+
+            &::after{
+                color:color(white);
+            }
+        }
+    }
+
+    .dropdown-menu{
+        border:none;
+        box-shadow:0 0 30px rgba(#000,.08);
+
+        &.#{$tag}-dark{
+            background-color:color(dark-50);
+
+            li{
+
+                a{
+                    color:color(white)!important;
+
+                    &:hover{
+                        background-color:color(blue-200);
+                    }
+                }
+            }
+        }
+
+        li{
+            font-family: $primaryFont, $serif;
+            font-size:14px;
+
+            &.disabled{
+                display: none!important;
+            }
+        }
+
+        .selected.active{
+            background-color:color(blue-200);
+        }
+    }
+}
+
+.bootstrap-select.#{$tag}.small{
+    width:auto!important;
+    margin:0 .5em;
+
+    button.btn.dropdown-toggle{
+        display: inline-flex;
+        align-items: center;
+        width:auto;
+        padding:0 0 0 15px;
+        color:rgba(color(blue-100),.5);
+        font-family: $primaryFont, $serif;
+        font-size:12px;
+        font-weight: weight(medium);
+        background-color: transparent;
+        border:1px solid color(gray-300);
+        border-radius: 5px;
+        transition:background-color .4s,color .4s,border-color .4s ease-in;
+
+        &::after{
+            content:$rtf-arrow-down;
+            display: block;
+            width: auto;
+            height: 100%;
+            font-family:$iconFont;
+            font-size: 5px;
+            float: right;
+            border: none;
+            padding: 12px;
+            border-left: 1px solid color(gray-300);
+            margin-left: 15px;
+            color:color(blue-100);
+            transition:color .4s, border-color .4s ease-in;
+        }
+    
+        &:hover{
+            background-color:darken(color(white),3)
+        }
+
+        &:hover,
+        &:active,
+        &:focus{
+            outline: none!important;
+        }
+    
+        &.#{$tag}-dark{
+            color:color(white);
+            
+            &::after{
+                color:color(white);
+            }
+
+            &:hover{
+                color:color(blue-100);
+                border-color:color(dark-400);
+
+                &::after{
+                    color:color(blue-100);
+                    border-color:rgba(color(dark-400),.5);
+                }
+            }
+        }
+    }
+}
+

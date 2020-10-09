@@ -1,0 +1,85 @@
+nav.#{$tag}-nav{
+    display: block;
+    width:100%;
+    height: auto;
+    padding:0 0 0 1em;
+    transition:padding .4s ease-in;
+
+    ul{
+        display: block;
+        width:100%;
+
+        li{
+            display: block;
+            width:100%;
+
+            a{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                padding:.75em 0 .75em .75em;
+                border-right: 2px solid transparent;
+                border-radius: 10px 0 0 10px;
+                transition:background-color .4s, border-color .4s ease-in;
+
+                &.rtf-dark{
+
+                    i{
+                        color:color(dark-500);
+                    }
+
+                    span{
+                        color:color(white);
+                    }
+
+                    &:hover{
+                        background-color:rgba(color(dark-200),.5);
+                        
+                        span{
+                            color:color(white);
+                        }
+                    }
+                }
+
+                &:hover{
+                    background-color:rgba(color(gray-300),.5);
+                    border-color:color(blue-200);
+
+                    i,span{
+                        color:color(blue-200);
+                    }
+                }
+
+                i{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width:40px;
+                    height: 25px;
+                    text-align: center;
+                    font-size:18px;
+                    color:color(dark-500);
+                    transition:color .4s ease-in;
+
+                    &.#{$tag}-line-up{
+                        font-size:12px;
+                    }
+                }
+
+                span{
+                    display: block;
+                    width:calc(100% - 45px);
+                    color:color(blue-100);
+                    font-size:12px;
+                    font-weight: weight(medium);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition:color .4s ease-in;
+                    opacity: 1;
+                    transition:opacity .8s ease-in;
+                }
+            }
+        }
+    }
+}

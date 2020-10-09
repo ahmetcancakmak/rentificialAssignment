@@ -1,0 +1,24 @@
+.#{$tag}-tag{
+
+    &.style-1{
+        display: inline-block;
+        padding:.75em 1em;
+        font-size:12px;
+        font-weight: weight(bold);
+        border-radius: 5px;
+
+        $sc-map:(
+            green,
+            yellow,
+            red
+        );
+
+        @each $sc in $sc-map{
+            &.#{$sc}{
+                color:color($sc);
+                background-color:rgba(color($sc),.2);
+            }
+        }
+    }
+
+}

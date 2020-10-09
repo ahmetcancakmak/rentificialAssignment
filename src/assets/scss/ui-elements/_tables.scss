@@ -1,0 +1,40 @@
+.table.table-bordered{
+    border-radius: 5px;
+    border-color:color(gray-400);
+
+    thead{
+        tr{
+            th{
+                font-size:16px;
+                font-weight: weight(medium);
+                color:color(blue-100);
+                border-bottom:1px solid color(gray-400);
+
+                &.#{$tag}-dark{
+                    color:color(white);
+                }
+            }
+        }
+    }
+
+    tbody{
+        tr{
+            td{
+                color:rgba(color(blue-100),.5);
+                font-size:14px;
+                font-weight: regular;
+
+                &.no-data{
+                    padding: 3em;
+                    font-size: 14px;
+                    text-align: center;
+                    font-weight: bold;
+                }
+
+                &.#{$tag}-dark{
+                    color:rgba(color(white),.5);
+                }
+            }
+        }
+    }
+}

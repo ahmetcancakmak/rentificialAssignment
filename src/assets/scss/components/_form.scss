@@ -1,0 +1,46 @@
+.#{$tag}-form-group{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin:.5em 0;
+
+    &.last-group{
+        margin:1em 0 0;
+    }
+
+    label{
+        color:rgba(color(blue-100), .5);
+        font-size:12px;
+        font-weight: weight(medium);
+        text-transform: uppercase;
+        margin:0 0 .5em;
+
+        &.#{$tag}-dark{
+            color:rgba(color(white),.5);
+        }
+    }
+
+    input,
+    .bootstrap-select{
+        width:100%!important;
+    }
+
+    .group{
+        .#{$tag}-plus{
+            font-size:12px!important;
+        }
+    }
+
+    span.error-state{
+        display: none;
+        color:color(red);
+        font-size:14px;
+        margin:.25em 0 0;
+
+        &.#{$tag}-active{
+            display: inline-block;
+        }
+    }
+
+}

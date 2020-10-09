@@ -1,0 +1,59 @@
+.#{$tag}-tab-items{
+    display: flex;
+    align-items: center;
+
+    li{
+        a{
+            display: block;
+            color:rgba(color(blue-100),.6);
+            font-size:16px;
+            font-weight: weight(bold);
+            padding:.75em 1.5em;
+            margin:0 .5em 0 0;
+            border:2px solid transparent;
+            border-radius: 10px;
+            transition:border-color .4s, color .4s ease-in;
+
+            &.#{$tag}-dark{
+                color:color(white);
+            }
+        }
+
+        &.#{$tag}-active{
+            a{
+                color:color(blue-100);
+                border-color:color(blue-100);
+
+                &.#{$tag}-dark{
+                    background-color:rgba(color(white),.3);
+                    border-color:transparent;
+                    color:color(white);
+                }
+            }
+        }
+    }
+
+    @include media-max(bp(large)){
+        flex-flow: column wrap;
+
+        li{
+            width:100%;
+            a{
+                display: block;
+                width:100%;
+                text-align:center;
+                margin:.5em 0;
+            }
+        }
+    }
+}
+
+.#{$tag}-tab{
+    display: block;
+    width:100%;
+    display: none;
+
+    &.#{$tag}-active{
+        display: block;
+    }
+}

@@ -1,0 +1,46 @@
+.#{$tag}-file-list{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0 -10px;
+
+    li{
+        position:relative;
+        width:calc(25% - 20px);
+        height:80px;
+        border-radius:5px;
+        background-color:color(gray-500);
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+        margin:10px;
+
+        &::before{
+            content:$rtf-times;
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $iconFont;
+            font-size:12px;
+            background-color:rgba(color(blue-100),.6);
+            color:color(white);
+            opacity: 0;
+            transition:opacity .4s ease-in;
+        }
+
+        &:hover{
+            &::before{
+                opacity: 1;
+            }
+        }
+    }
+}

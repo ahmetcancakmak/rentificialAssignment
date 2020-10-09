@@ -1,0 +1,47 @@
+// ## GET COLOR FROM COLORMAP ## 
+@function color($colorname){
+    @return map-get($color-map, $colorname);
+}
+
+// ## COLOR CLASSES ##
+@each $name, $color in $color-map {
+    .#{$tag}-#{$name}{
+        background-color: $color;
+    }
+    .#{$tag}--#{$name}{
+        color: $color;
+    }
+}
+
+// ## DARK COLOR CLASSES ##
+@each $name, $color in $color-map {
+    .#{$tag}-dark{
+        &.#{$tag}-dark-#{$name}{
+            background-color: $color;
+            
+            &.bgt{
+                background-color:rgba($color,.2);
+            }
+        }
+        &.#{$tag}-dark--#{$name}{
+            color: $color!important;
+        }
+    }
+}
+
+// ## GET FONT WEIGHT FROM WEIGHTMAP ## 
+@function weight($weight){
+    @return map-get($weight-map, $weight);
+}
+
+// ## WEIGHT CLASSES ##
+@each $name, $weight in $weight-map{
+    .#{$tag}-#{$name}{
+        font-weight: $weight;
+    }
+}
+
+// ## GET BREAKPOINT FROM BREAKPOINTS MAP ##
+@function bp($x){
+    @return map-get($breakpoints, $x);
+}

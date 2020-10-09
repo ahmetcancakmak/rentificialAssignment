@@ -1,0 +1,168 @@
+.#{$tag}-button{
+    border:none;
+    box-shadow: none;
+    cursor: pointer;
+
+    &.style-1{
+        display: inline-block;
+        padding:.75em 1.5em;
+        border-radius: 10px;
+        background-color:color(blue-200);
+        color:color(white);
+        transition:background-color .4s ease-in;
+
+        &:hover{
+            background-color:darken(color(blue-200),5);
+        }
+    }
+
+    &.style-2{
+        display: inline-block;
+        padding:.75em 1.5em;
+        background-color: rgba(color(blue-300),.5);
+        border-radius: 10px;
+        border:1px dashed rgba(color(blue-200),.3);
+        color:color(blue-100);
+        transition:background-color .4s,color .4s ease-in;
+
+        &:hover{
+            background-color:color(blue-300);
+        }
+
+        &.#{$tag}-dark{
+            background-color:color(dark-100);
+            border-color:color(white);
+            
+            &:hover{
+                background-color:color(white);
+                color:color(blue-100);
+
+                .#{$tag}--inner--text{
+                    color:color(blue-200);
+                }
+            }
+        }
+
+        .#{$tag}--inner--icon{
+            color:color(blue-200);
+        }
+    }
+
+    &.with-icon{
+        display: inline-flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        .#{$tag}--inner--icon{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width:25px;
+            font-size:14px;
+
+            &.small{
+                font-size:10px;
+            }
+
+            &.right{
+                justify-content: flex-end;
+            }
+        }
+
+        .#{$tag}--inner--text{
+            width:calc(100% - 25px);
+            font-size: 14px;
+            
+            &.#{$tag}-dark{
+                color:color(white);
+            }
+        }
+
+        &.just-icon{
+            justify-content: center;
+            padding:1em;
+
+            .#{$tag}--inner--icon{
+                justify-content: center;
+                font-size:18px;
+            }
+        }
+    }
+
+    &.icon-button{
+        display: inline-flex;
+        justify-content:center;
+        align-items: center;
+        position: relative;
+        width:22px;
+        height:22px;
+        margin:0 .5em;
+        border-radius: 50%;
+        transition:all .4s ease-in;
+
+        &::before{
+            content:"";
+            width:200%;
+            height:200%;
+            position: absolute;
+            left:-50%;
+            top:-50%;
+            border-radius: 50%;
+            transform:scale(0);
+            transform-origin: center;
+            transition:transform .4s, opacity .4s ease-in;
+            opacity: 0;
+        }
+
+        &:hover{
+            &::before{
+                opacity: 1;
+                transform:scale(1);
+            }
+        }
+
+        $sc-map:(
+            green,
+            yellow,
+            red
+        );
+
+        @each $sc in $sc-map{
+            &.#{$sc}{
+                color:color($sc);
+
+                &::before{
+                    background-color:rgba(color($sc),.2);
+                }
+            }
+        }
+    }
+
+    &.lined{
+        display: inline-block;
+        padding:1em 1.5em;
+        color:rgba(color(blue-100),.5);
+        font-size:12px;
+        font-weight: weight(medium);
+        border:1px solid color(gray-300);
+        border-radius: 5px;
+        transition:background-color .4s,color .4s ease-in;
+        text-align: center;
+
+        &:hover{
+            background-color:darken(color(white),3)
+        }
+
+        &.#{$tag}-dark{
+            color:color(white);
+
+            &:hover{
+                color:color(blue-100);
+            }
+        }
+
+        &.small{
+            padding:.5em 1.5em;
+        }
+    }
+}

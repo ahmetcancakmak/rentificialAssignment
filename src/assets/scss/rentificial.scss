@@ -1,0 +1,25 @@
+/*
+
+# PROJECT INFO #
+-----------------------------------------
+Project: Rentificial
+Version: 1.0
+Author: Sefa Can Demir
+Author Url: https://sefacandemir.com.tr
+
+
+# SASS FILE STRUCTURE #
+-----------------------------------------
+
+*/
+
+$tag:'rtf'!default;
+
+//## UTILITIES ##
+@import 'utilities/utilities';
+
+//## UI ELEMENTS ##
+@import 'ui-elements/ui-elements';
+
+//## COMPONENTS ##
+@import 'components/components';

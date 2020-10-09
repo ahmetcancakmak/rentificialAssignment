@@ -1,0 +1,39 @@
+$font-path: "../fonts/"!default;
+
+$font-faces: (
+ 'SFProDisplay': (
+    "SFProDisplay-Ultralight" 100 normal,
+    "SFProDisplay-Thin" 200 normal,
+    "SFProDisplay-Light" 300 normal,
+    "SFProDisplay-Regular" 400 normal,
+    "SFProDisplay-Medium" 500 normal,
+    "SFProDisplay-Semibold" 600 normal,
+    "SFProDisplay-Bold" 700 normal,
+    "SFProDisplay-Heavy" 800 normal,
+    "SFProDisplay-Black" 900 normal,
+  )
+) !default;
+
+@mixin font-face($font-family,$font-path, $font-folder, $font-file, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url( $font-path + $font-folder + $font-file + '.otf') format('opentype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@each $font in $font-faces {
+  $font-family: quote( #{nth($font, 1)} );
+  $font-folder: quote( #{nth($font, 1)} ) + '/';
+  $font-variants: nth($font, 2);
+  
+  @each $variant in $font-variants {
+    $font-path: $font-path !global;
+    $font-file: nth($variant, 1);
+    $font-weight: nth($variant, 2);
+    $font-style: nth($variant, 3);
+  
+    @include font-face($font-family, $font-path, $font-folder, $font-file, $font-weight, $font-style)
+  }
+}
