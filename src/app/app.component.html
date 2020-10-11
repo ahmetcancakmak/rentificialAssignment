@@ -256,7 +256,7 @@
                 <div class="rtf-card reminder-cards">
                     <!-- Rtf Card Header -->
                     <div class="rtf-card-header">
-                        <a href="#" type="button" (click)="getAssets()" class="rtf-button style-1 with-icon">
+                        <a href="#" type="button" class="rtf-button style-1 with-icon">
                             <span class="rtf--inner--icon">
                                 <i class="rtf rtf-star"></i>
                             </span>
@@ -275,7 +275,7 @@
                             </span>
                         </a>
                         <!-- Modal -->
-                        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-form container">
                                 <div class="modal-content p-5">
@@ -322,9 +322,10 @@
                                                 <div class="col-lg-4">
                                                     <div class="rtf-form-group">
                                                         <label for="">Customer</label>
-                                                        <div class="group w-100 d-flex flex-nowrap align-items-center">
-                                                            <input type="number" class="rtf-input style-1"
-                                                                placeholder="Select">
+                                                        <div class="group w-100 d-flex align-items-center">
+                                                            <select class="form-control">
+                                                                <option *ngFor="let item of customers.Result">{{item.ID | json}}</option>
+                                                            </select>
                                                             <a href="#" type="button"
                                                                 class="rtf-button style-1 with-icon just-icon ml-3">
                                                                 <i class="rtf rtf-user-plus"></i>

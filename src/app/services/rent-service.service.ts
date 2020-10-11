@@ -1,47 +1,46 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Assets } from '../models/assets';
 import { Customers } from '../models/customers';
 import { Rents } from '../models/rents';
+import { AuthServiceService } from './auth-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RentServiceService {
-  path : "https://ssvcv1.rentificial.com/"
-  constructor(private http: HttpClient) { 
-    this.http.post(this.path+ "Auth/authenticate",{"Username":"fgungor@rentificial.com","Password":"408c3fe418d4e69034a23682ffb08d33"})
-    console.log("Giriş yapıldı")
+  constructor(private http: HttpClient,private auth:AuthServiceService) {
+   this.auth.getLogin()
   }
 
   //Assets
-  getAsset():Observable<Assets[]>{
-    return this.http.get<Assets[]>(this.path+"Assets/GetAssets/")
+  getAsset(): Observable<Assets[]> {
+    return this.http.get<Assets[]>("https://ssvcv1.rentificial.com/Assets/GetAssets/")
   }
 
   //Customers
-  getCustomer():Observable<Customers[]>{
-    return this.http.get<Customers[]>(this.path+"Customers/GetCustomers/")
+  getCustomer(): Observable<Customers[]> {
+    return this.http.get<Customers[]>("https://ssvcv1.rentificial.com/Customers/GetCustomers/")
   }
-  getCustomerAddress():Observable<Customers[]>{
-    return this.http.get<Customers[]>(this.path+"Customers/GetCustomerAddresses/?_CustomerID=7")
+  getCustomerAddress(): Observable<Customers[]> {
+    return this.http.get<Customers[]>("https://ssvcv1.rentificial.com/Customers/GetCustomerAddresses/?_CustomerID=7")
   }
-  getCustomerPhone():Observable<Customers[]>{
-    return this.http.get<Customers[]>(this.path+"Customers/GetCustomerPhones/?_CustomerID=7")
+  getCustomerPhone(): Observable<Customers[]> {
+    return this.http.get<Customers[]>("https://ssvcv1.rentificial.com/Customers/GetCustomerPhones/?_CustomerID=7")
   }
 
   //Rents
-  getRent():Observable<Rents[]>{
-    return this.http.get<Rents[]>(this.path+"Rentals/GetRents")
+  getRent(): Observable<Rents[]> {
+    return this.http.get<Rents[]>("https://ssvcv1.rentificial.com/Rentals/GetRents")
   }
-  getRentalStatuse():Observable<Rents[]>{
-    return this.http.get<Rents[]>(this.path+"Rentals/GetRentalStatuses")
+  getRentalStatuse(): Observable<Rents[]> {
+    return this.http.get<Rents[]>("https://ssvcv1.rentificial.com/Rentals/GetRentalStatuses")
   }
-  getRentalAsset():Observable<Rents[]>{
-    return this.http.get<Rents[]>(this.path+"Rentals/GetRentedAssets?_RentalID=46")
+  getRentalAsset(): Observable<Rents[]> {
+    return this.http.get<Rents[]>("https://ssvcv1.rentificial.com/Rentals/GetRentedAssets?_RentalID=46")
   }
-  addNewRental():Observable<Rents[]>{
-    return this.http.post<Rents[]>(this.path+"Rentals/AddNewRental","")
+  addNewRental(): Observable<Rents[]> {
+    return this.http.post<Rents[]>("https://ssvcv1.rentificial.com/Rentals/AddNewRental", "")
   }
 }
